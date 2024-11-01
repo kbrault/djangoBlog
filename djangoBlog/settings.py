@@ -3,10 +3,11 @@ import os
 import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = 'django-insecure-5)4$!q*7hsf3x2w8!sg*(q(5n_#l5rg+=)65b)0^snhbwup!mo'
+SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['django', 'localhost', '127.0.0.1']
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -87,8 +88,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
+
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'blog/static'),  # Update 'your_app' to your actual app name
+    os.path.join(BASE_DIR, 'blog/static')
 ]
 
 # Default primary key field type

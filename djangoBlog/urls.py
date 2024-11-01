@@ -6,7 +6,6 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # Admin site URL
-    path('markdownx/', include('markdownx.urls')),  # Include markdownx URLs if using django-markdownx
     path('', include('blog.urls')),  # Include the blog app's URLs
 ]
 
