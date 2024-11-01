@@ -1,7 +1,7 @@
 services:
   django_gunicorn:
     volumes:
-      - static:/static
+      - static:/djangoblog/static
     env_file:
       - .env
     build:

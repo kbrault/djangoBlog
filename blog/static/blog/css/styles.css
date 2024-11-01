@@ -1,3 +1,8 @@
 .small-date {
     font-size: x-small;
 }
+
+ul,
+li {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

@@ -30,7 +30,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'djangoBlog.urls'
+ROOT_URLCONF = 'djangoblog.urls'
 
 TEMPLATES = [
     {
@@ -48,7 +48,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'djangoBlog.wsgi.application'
+WSGI_APPLICATION = 'djangoblog.wsgi.application'
 
 
 
@@ -86,13 +86,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = "/static/"
 
+# This should point to the directory where you keep your static files during development.
+STATICFILES_DIRS = [BASE_DIR / 'staticfiles']  # Change to a directory other than STATIC_ROOT
 
+# STATIC_ROOT is the directory where Django will collect all static files for production
+STATIC_ROOT = BASE_DIR / 'static'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'blog/static')
-]
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / 'media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
