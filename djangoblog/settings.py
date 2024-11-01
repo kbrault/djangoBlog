@@ -3,7 +3,7 @@ import os
 import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = "YOURSECRETKEY"
 DEBUG = True
 
 ALLOWED_HOSTS = ['django', 'localhost', '127.0.0.1', '0.0.0.0']

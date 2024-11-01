@@ -3,20 +3,29 @@
 {% block title %}Blog - Post List{% endblock %}
 
 {% block content %}
-    <h2>Blog Posts</h2>
-    <ul>
-        {% for post in posts %}
-            <li>
-                <h3>
-                    <a href="{% url 'post_detail' year=post.published_date.year month=post.published_date.month day=post.published_date.day slug=post.slug %}">
-                        {{ post.title }} 
-                    </a><span class="small-date">{{ post.published_date|date:"F d, Y" }}</span>
-                </h3>
-                <p></p>
-                <!--<p>{{ post.content|truncatewords:30 }}...</p>-->
-            </li>
-        {% empty %}
-            <p>No posts available.</p>
-        {% endfor %}
-    </ul>
+    <div class="container mt-4">
+        <h2 class="mb-4">Blog Posts</h2>
+        <div class="row">
+            {% for post in posts %}
+                <div class="col-md-6 mb-4"> <!-- Two cards per row -->
+                    <div class="card border border-secondary rounded-3 position-relative overflow-hidden"> <!-- Card background handled in CSS -->
+                        <div class="card-body">
+                            <h3 class="card-title">
+                                <h4 href="{% url 'post_detail' year=post.published_date.year month=post.published_date.month day=post.published_date.day slug=post.slug %}" class="card-title text-decoration-none">
+                                    {{ post.title }}
+                                </h4>
+                            </h3>
+                            <p class="small-date text-muted" style="font-size: 0.75rem;">{{ post.published_date|date:"F d, Y" }}</p>
+                            <p class="card-text">{{ post.content|truncatewords:30 }}...</p>
+                            <a href="{% url 'post_detail' year=post.published_date.year month=post.published_date.month day=post.published_date.day slug=post.slug %}" class="btn btn-secondary mt-2">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="col text-center">
+                    <p>No posts available.</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

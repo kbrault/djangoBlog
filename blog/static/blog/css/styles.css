@@ -1,8 +1,79 @@
-.small-date {
-    font-size: x-small;
+body.dark-theme {
+    background-color: #343a40;
+    /* Dark background */
+    color: #f8f9fa;
+    /* Light text */
 }
 
-ul,
-li {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+.dark-theme .navbar {
+    background-color: #495057;
+    /* Darker navbar */
+}
+
+.dark-theme .card {
+    background-color: #495057;
+    /* Darker card background */
+    border-color: #6c757d;
+    /* Darker border */
+}
+
+.dark-theme .card-text,
+.dark-theme .small-date,
+.dark-theme .text-muted {
+    color: #f8f9fa;
+    /* Light text for better readability */
+}
+
+.dark-theme .card-title {
+    color: #f8f9fa;
+}
+
+.dark-theme .btn-secondary {
+    background-color: #6c757d;
+    /* Darker button */
+    border-color: #6c757d;
+    /* Darker button border */
+}
+
+.dark-theme a {
+    color: #ffffff;
+    /* Ensure all links are white in dark mode */
+}
+
+/* Light theme styles */
+.card {
+    background-color: #f8f9fa;
+    /* Light card background */
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    /* Standard button color */
+    border-color: #6c757d;
+    /* Standard button border */
+}
+
+.footer {
+    background-color: #495057;
+    /* Match footer to navbar */
+    color: #f8f9fa;
+    /* Light text in footer */
+    padding: 20px 0;
+    /* Add some padding */
+}
+
+.navbar-nav {
+    margin-right: auto;
+    padding-left: 20px;
+    /* Push other nav items to the left */
+}
+
+.navbar .btn {
+    margin-left: 15px;
+    /* Add some margin to the button */
+}
+
+.navbar .container {
+    padding-left: 30px;
+    padding-right: 30px;
 }
