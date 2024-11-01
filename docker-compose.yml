@@ -5,8 +5,8 @@ services:
     build:
       context: .
     volumes:
-      - static:/djangoblog/static # Volume for static files
-      - db_data:/djangoblog # Volume for SQLite database directly in djangoblog
+      - static:/djangoblog/static
+      - db_data:/djangoblog
     env_file:
       - .env
     ports:
@@ -15,12 +15,12 @@ services:
   nginx:
     build: ./nginx
     volumes:
-      - static:/static # Volume for static files
+      - static:/static
     ports:
       - "80:80"
     depends_on:
       - django_gunicorn
 
 volumes:
-  static: # Named volume for static files
-  db_data: # Named volume for SQLite database
+  static:
+  db_data:

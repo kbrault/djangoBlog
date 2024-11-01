@@ -1,13 +1,10 @@
 from pathlib import Path
-import os
-import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "YOURSECRETKEY"
 DEBUG = True
 
 ALLOWED_HOSTS = ['django', 'localhost', '127.0.0.1', '0.0.0.0']
-
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -18,7 +15,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
 ]
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -50,8 +46,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'djangoblog.wsgi.application'
 
-
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -82,22 +76,11 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
-
 STATIC_URL = "/static/"
-
-# This should point to the directory where you keep your static files during development.
-STATICFILES_DIRS = [BASE_DIR / 'staticfiles']  # Change to a directory other than STATIC_ROOT
-
-# STATIC_ROOT is the directory where Django will collect all static files for production
+STATICFILES_DIRS = [BASE_DIR / 'staticfiles']
 STATIC_ROOT = BASE_DIR / 'static'
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / 'media/'
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
