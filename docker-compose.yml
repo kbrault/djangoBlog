@@ -1,21 +1,26 @@
+version: '3.8'
+
 services:
   django_gunicorn:
-    volumes:
-      - static:/djangoblog/static
-    env_file:
-      - .env
     build:
       context: .
+    volumes:
+      - static:/djangoblog/static # Volume for static files
+      - db_data:/djangoblog # Volume for SQLite database directly in djangoblog
+    env_file:
+      - .env
     ports:
       - "8000:8000"
+
   nginx:
     build: ./nginx
     volumes:
-      - static:/static
+      - static:/static # Volume for static files
     ports:
       - "80:80"
     depends_on:
       - django_gunicorn
 
 volumes:
-  static:
+  static: # Named volume for static files
+  db_data: # Named volume for SQLite database

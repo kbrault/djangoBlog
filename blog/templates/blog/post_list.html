@@ -7,8 +7,8 @@
         <h2 class="mb-4">Blog Posts</h2>
         <div class="row">
             {% for post in posts %}
-                <div class="col-md-6 mb-4"> <!-- Two cards per row -->
-                    <div class="card border border-secondary rounded-3 position-relative overflow-hidden"> <!-- Card background handled in CSS -->
+                <div class="col-md-6 mb-4">
+                    <div class="card border border-secondary rounded-3 position-relative overflow-hidden">
                         <div class="card-body">
                             <h3 class="card-title">
                                 <h4 href="{% url 'post_detail' year=post.published_date.year month=post.published_date.month day=post.published_date.day slug=post.slug %}" class="card-title text-decoration-none">
