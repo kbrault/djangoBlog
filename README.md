@@ -2,7 +2,7 @@
 
 This is a simple Django blog boilerplate project that uses Docker for easy setup and deployment. It features a basic blog interface, with posts created through the default Django admin interface. Ideal for quick deployment and development, this boilerplate provides a straightforward blogging platform that you can easily extend and customize.
 
-![Example Image](https://raw.githubusercontent.com/kbrault/djangoBlog/main/djangoblog.png)
+![djangoblog](https://raw.githubusercontent.com/kbrault/djangoBlog/refs/heads/main/djangoblog.png)
 
 
 > **Work in progress**
