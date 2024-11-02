@@ -35,7 +35,7 @@ Make sure you have the following installed on your machine:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/django-blog-boilerplate.git
+   git clone https://github.com/kbrault/djangoBlog.git
    cd django-blog-boilerplate
     ```
 
