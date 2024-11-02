@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   django_gunicorn:
     build:
@@ -11,6 +9,7 @@ services:
       - .env
     ports:
       - "8000:8000"
+    container_name: djangoblog_gunicorn
 
   nginx:
     build: ./nginx
@@ -20,7 +19,10 @@ services:
       - "80:80"
     depends_on:
       - django_gunicorn
+    container_name: djangoblog_nginx
 
 volumes:
   static:
+    name: djangoblog_static
   db_data:
+    name: djangoblog_db
